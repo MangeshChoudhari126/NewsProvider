@@ -16,6 +16,34 @@ npm init -y
 npm install express body-parser dotenv crypto-js express-validator jsonwebtoken mysql2 nodemon
 
 
+## open mysql command-line
+
+### create admin and article table
+
+// admin table
+
+create table admin ( 
+id int auto_increment primary key,
+firstname varchar(255) not null , 
+lastname varchar(255) not null, 
+email varchar(255) not null unique,
+password varchar(255) not null, 
+role varchar(255) default "Visitor", 
+picture varchar(255) default "hhtps://img.jpg"
+);
+
+
+// article table
+
+create table article(
+author_id int, 
+art_id int auto_increment primary key, 
+title varchar(255) not null,
+category varchar(255) not null, 
+paragraph1 varchar(255) not null, 
+paragraph2 varchar(255), 
+paragraph3 varchar(255)
+);
 
     
 ## Public API'S
